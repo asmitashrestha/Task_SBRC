@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTML Forms and Input Elements</title>
+<style>
+    h1{
+        justify-content: center;
+        text-align: center;
+        font-family: sans-serif;
+        font-size: 28px;
+        color: rgb(54, 53, 53);
+    }
+    .para-head{
+        position: relative;
+        left: 485px;
+        font-size: 18px;
+        color: rgb(48, 46, 46);
+    }
+    .container{
+        margin-left: 250px;
+        margin-top: 40px;
+    }
+    .name-inp{
+        display: flex;
+        margin-top: 10px;
+    }
+    .name, .email-contact{
+        margin-left: 20px;
+    }
+    .name input{
+        padding: 10px;
+        border-radius: 9px;
+        width: 250px;
+        margin-top: 10px;
+    }
+    .email-contact input{
+        padding: 10px;
+        border-radius: 9px;
+        width: 248px;
+        margin-top: 10px;
+    }
+    .name label{
+        font-size: 18px;
+        color: rgb(48, 47, 47);
+        margin-right:34px ;
+    }
+    .email-contact label{
+        font-size: 18px;
+        color: rgb(48, 47, 47);
+        margin-right:10px ;
+
+    }
+    .basic-info{
+        display: flex;
+        margin-left: 16px;
+        margin-top: 10px;
+        justify-content: space-between;
+        margin-right: 300px;
+    }
+    .bio-info{
+        font-size: 18px;
+        color: rgb(48, 47, 47);
+        margin-right: 10px;
+    }
+    .submit-btn{
+        justify-content: center;
+        text-align: center;
+        margin-top: 18px;
+        margin-bottom: 30px;
+    }
+    .submit-btn button{
+        width: 110px;
+        height: 60px;
+        padding:11px 17px;
+        border-radius: 7px;
+        background-color: rgb(55, 55, 204);
+        color: aliceblue;
+        font-size: 18px;
+    }
+    .submit-btn button:hover{
+        background-color: blue;
+    }
+    /* .textarea{
+        margin-top: 60px;
+        margin-left: 12px;
+    }
+    .textarea p{
+        color: rgb(41, 39, 39);
+        font-size: 18px;
+    }
+    */
+    .textarea {
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .textarea p {
+      font-size: 1.2em;
+    }
+
+    textarea {
+      width: 79%;
+      box-sizing: border-box;
+    }
+    @media screen and (max-width:564px){
+        h1{
+        justify-content: center;
+        text-align: center;
+    }
+        .para-head{
+        position: relative;
+        left: 40px;
+        font-size: 20px;
+        font-family: sans-serif;
+        color: rgb(49, 37, 37);
+    }
+
+    .name-inp{
+        display: block;
+        margin-top: 20px;
+    }
+    .container{
+        margin-left: 90px;
+    }
+    .name, .email-contact{
+        margin-top: 20px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    .basic-info{
+        display: block;
+    }
+    .bio-info{
+        display: flex;
+        margin-bottom: 30px;
+    }
+    .info{
+        position: relative;
+        top: 50px;
+    }
+    .info input{
+        margin-right: 60px;
+    }
+    .submit-btn{
+        justify-content: center;
+        text-align: center;
+        margin-top: 70px;
+        margin-bottom: 30px;
+    }
+    .submit-btn button{
+        padding:11px 17px;
+        border-radius: 7px;
+        background-color: rgb(55, 55, 204);
+    }
+    .textarea p {
+        font-size: 1.5em;
+        color: rgb(41, 40, 40);
+      }
+
+      textarea {
+        font-size: 1.2em;
+        color: rgb(29, 28, 28);
+      }
+   
+    }
+
+
+</style>
+</head>
+<body style="background-color: rgb(219, 207, 191);">
+<h1>HTML Forms</h1>
+<p class="para-head">Input all the fields and click on the submit button</p>
+<form onsubmit="submitForm(); return false;">
+
+<div class="container">
+    <div class="name-inp">
+    <div class="name">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required >
+    </div>
+    <div class="name">
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" required>
+    </div>
+    </div>
+    <div class="name-inp">
+    <div class="email-contact">
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email address" required >
+    </div>
+    <div class="email-contact">
+        <label for="contact number">Phone Number:</label>
+        <input type="tel" id="contact" name="contact" placeholder="Enter your contact number" required>
+    </div>
+    </div>
+
+<div class="basic-info">
+    <div class="bio-info">
+       <p>Gender:</p> 
+       <div class="info">
+        <label for="male">
+    <input type="radio" id="male" name="gender" value="male"> Male
+    </label>
+       </div>
+       <div class="info">
+           <label for="female">
+    <input type="radio" id="female" name="gender" value="female"> Female
+    </label>
+       </div>
+    
+     
+    </div>
+    <div class="bio-info">
+        <p>Interests:</p>
+
+        <div class="info">
+           <label for="coding">
+        <input type="checkbox" id="coding" name="interests" value="coding"> Coding
+        </label>  
+        </div>
+
+        <div class="info">
+            <label for="design">
+        <input type="checkbox" id="design" name="interests" value="design"> Design
+        </label> 
+        </div>
+
+        <div class="info">
+           <label for="gaming">
+        <input type="checkbox" id="gaming" name="interests" value="gaming"> Gaming
+        </label> 
+        </div> 
+
+    </div>
+    
+</div>
+<!-- <div class="textarea">
+    <p>Review of your experience while doing this task : </p>
+    <textarea id="textarea" name="textarea" rows="9" cols="115"></textarea>
+</div> -->
+<div class="textarea">
+    <p>Write something here:</p>
+    <textarea id="textarea" name="textarea" rows="9" cols="50"></textarea>
+  </div>
+</div>
+
+<div class="submit-btn">
+    <button type="submit">Submit</button>
+</div>
+
+</form>
+
+<script>
+    const submitForm = () =>{
+        alert("Form submitted successfully!")
+    }
+
+</script>
+</body>
+</html>
+
+
+
+
